@@ -25,24 +25,40 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        body: ListView.separated(
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: Text('${index+1}',style: TextStyle(fontSize: 22)),
-              title: Text(arrColors[index], style: TextStyle(fontSize: 22)),
-              subtitle: Text('Number'),
-              trailing: Icon(Icons.add),
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(height: 1, color: Colors.pink, thickness: 1,);
-          },
-          itemCount: arrColors.length,
+        body: Center(
+          child: CircleAvatar(
+            backgroundColor: Colors.purple,
+            child: Text(('A'),style: TextStyle( fontSize: 55, fontWeight: FontWeight.bold, color: Colors.black),),
+            radius: 50,
+
+
+          ),
         ),
       ),
     );
   }
 }
+
+
+// List view Seperated and Circular Avator
+//
+// ListView.separated(
+// itemBuilder: (context, index) {
+// return ListTile(
+// leading: CircleAvatar(
+// backgroundImage: AssetImage('assets/images/flutter.png'),
+// backgroundColor: Colors.deepPurple,
+// ),
+// title: Text(arrColors[index], style: TextStyle(fontSize: 22)),
+// subtitle: Text('Number'),
+// trailing: Icon(Icons.add),
+// );
+// },
+// separatorBuilder: (context, index) {
+// return Divider(height: 1, color: Colors.pink, thickness: 1,);
+// },
+// itemCount: arrColors.length,
+// ),
 
 // Expanded and padding / margin
 // Padding(
