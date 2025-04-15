@@ -27,30 +27,75 @@ class MyApp extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: ListView.separated(
-            itemBuilder: (context, index) {
-              return Text(
-                arrColors[index],
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-
+          child: Column(
+            children: [
+              Expanded(
+                flex: 2,
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  color: Colors.redAccent,
+                  height: 100,
                 ),
-              );
-            },
-            itemCount: arrColors.length,
-            separatorBuilder: (context, index){
-              return Divider(
-                color: Colors.pink,
-                thickness: 1,
-              );
-            },
+              ),
+              Expanded(
+                flex: 4,
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  color: Colors.deepPurple,
+                  height: 100,
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(bottom: 11),
+                color: Colors.teal,
+                height: 100,
+              ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  color: Colors.blue,
+                  height: 100,
+                ),
+              )
+            ],
           ),
-        ),
+        )
       ),
     );
   }
 }
+
+
+
+
+
+// ListView , ListView Builder, List View Seperated
+
+
+// adding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: ListView.separated(
+//             itemBuilder: (context, index) {
+//               return Text(
+//                 arrColors[index],
+//                 style: TextStyle(
+//                   fontSize: 22,
+//                   fontWeight: FontWeight.bold,
+//
+//                 ),
+//               );
+//             },
+//             itemCount: arrColors.length,
+//             separatorBuilder: (context, index){
+//               return Divider(
+//                 color: Colors.pink,
+//                 thickness: 1,
+//               );
+//             },
+//           ),
+//         ),
+
 //
 // Center(
 // child: Column(
