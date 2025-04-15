@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var arrColors = ["pink", "blue", "orange", "purple", "yello"];
+    var arrNames = ["Ramesh","Suresh","ganesh","Mahesh"];
 
     return MaterialApp(
       home: Scaffold(
@@ -25,16 +25,9 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        body: Center(
-          child: CircleAvatar(
-            backgroundColor: Colors.purple,
-            child: Text(('A'),style: TextStyle( fontSize: 55, fontWeight: FontWeight.bold, color: Colors.black),),
-            radius: 50,
-
-
-          ),
-        ),
+        body: Center(child: Text("This Demo App",style: TextStyle(fontSize: 32,fontFamily: 'Rubik',fontWeight: FontWeight.bold))
       ),
+    ),
     );
   }
 }
