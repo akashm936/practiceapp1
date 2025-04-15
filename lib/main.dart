@@ -23,61 +23,156 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                padding: EdgeInsets.all(8.0),
-                width: 150,
-                height: 150,
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
 
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.teal,
+                      Container(
+                        margin: EdgeInsets.only(right: 11,bottom: 11),
+                        width: 200,
+                        height: 200,
+                        color: Colors.deepOrange,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 11,bottom: 11),
+                        width: 200,
+                        height: 200,
+                        color: Colors.amber,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 11,bottom: 11),
+                        width: 200,
+                        height: 200,
+                        color: Colors.pink,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 11,bottom: 11),
+                        width: 200,
+                        height: 200,
+                        color: Colors.lightBlue,
+                      ),
+                    ],
+                  ),
                 ),
-
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "This is Container Text",
-                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    ElevatedButton(onPressed: () {
-                      print("Eleveted button is Clicked");
-                    }, child: Text("Click me")),
-                  ],
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.amber,
                 ),
-              ),
-
-              Container(
-                padding: EdgeInsets.all(8.0),
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.teal,
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.pink,
                 ),
-                child: Image.asset('assets/images/insta.jpg'),
-              ),
-              Container(
-                padding: EdgeInsets.all(8.0),
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.teal,
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.lightBlue,
                 ),
-                child: Image.asset('assets/images/flutter.png' )
-
-              ),
-
-
-            ],
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.deepOrange,
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.amber,
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.pink,
+                ),
+                Container(
+                  margin: EdgeInsets.only(bottom: 11),
+                  height: 200,
+                  color: Colors.lightBlue,
+                ),
+              ],
+            ),
           ),
         ),
+
       ),
     );
   }
 }
+//
+// Center(
+// child: Column(
+// mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+// children: [
+// Container(
+// padding: EdgeInsets.all(8.0),
+// height: 200,
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(20),
+// color: Colors.teal,
+// ),
+//
+// child: Column(
+// mainAxisAlignment: MainAxisAlignment.center,
+// children: [
+// Text(
+// "This is Container Text",
+// style: TextStyle(
+// fontSize: 18,
+// fontWeight: FontWeight.bold,
+// ),
+// ),
+// ElevatedButton(
+// onPressed: () {
+// print("Eleveted button is Clicked");
+// },
+// child: Text("Click me"),
+// ),
+// ],
+// ),
+// ),
+//
+// Container(
+// padding: EdgeInsets.all(8.0),
+// width: 150,
+// height: 150,
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(20),
+// color: Colors.teal,
+// ),
+// child: Image.asset('assets/images/insta.jpg'),
+// ),
+//
+// InkWell(
+// onTap: (){
+// print("user clicked on the container");
+// },
+// child: Container(
+// padding: EdgeInsets.all(8.0),
+// width: 150,
+// height: 150,
+// decoration: BoxDecoration(
+// borderRadius: BorderRadius.circular(20),
+// color: Colors.deepOrange,
+// ),
+// child: Center(
+// child: InkWell(
+// onTap: (){
+// print("My name is Akash");
+// },
+// child: Text(
+// "Get My Name",
+// style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+// ),
+// ),
+// ),
+// ),
+// ),
+// ],
+// ),
+// ),
