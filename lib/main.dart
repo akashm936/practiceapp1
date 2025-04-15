@@ -4,15 +4,23 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var arrNames = ["Ramesh","Suresh","ganesh","Mahesh"];
+    var arrNames = ["Ramesh", "Suresh", "ganesh", "Mahesh"];
+    var emailText = TextEditingController();
+    var passText = TextEditingController();
 
     return MaterialApp(
+      theme: ThemeData(),
       home: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -25,13 +33,120 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        body: Center(child: Text("This Demo App",style: TextStyle(fontSize: 32,fontFamily: 'Rubik',fontWeight: FontWeight.bold))
+        body: Center(
+          child: Container(
+            width: 300,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  controller: emailText,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.pink,
+                            width: 3,
+                        style: BorderStyle.solid
+
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                        width: 3,
+                        style: BorderStyle.solid
+                      )
+                    ),
+                    disabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                        width: 3,
+                        style: BorderStyle.solid
+                      )
+                    ),
+                    prefixIcon: Icon(Icons.email),prefixIconColor: Colors.pink,
+                  ),
+                ),
+                Container(height: 15,),
+                TextField(
+                  controller: passText,
+                  decoration: InputDecoration(
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                            color: Colors.pink,
+                            width: 3,
+                            style: BorderStyle.solid
+
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 3,
+                              style: BorderStyle.solid
+                          )
+                      ),
+                      disabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide(
+                              color: Colors.grey,
+                              width: 3,
+                              style: BorderStyle.solid
+                          )
+                      ),
+                    suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.remove_red_eye))
+                  ),
+
+                ),
+                Container(height: 20,),
+                ElevatedButton(onPressed: (){}, child: Text("Login"),)
+              ],
+            ),
+          ),
+        )
       ),
-    ),
     );
   }
 }
 
+
+// Center(
+// child: Card(
+// elevation: 12,
+// shadowColor: Colors.redAccent,
+// child: Padding(
+// padding: const EdgeInsets.all(11),
+// child: Text(
+// "Hello Akash",
+// style: TextStyle(fontWeight: FontWeight.bold, fontSize: 33,color: Colors.red),
+// ),
+// ),
+// ),
+// ),
+
+
+
+
+//
+//
+// Padding(
+// padding: const EdgeInsets.all(8.0),
+// child: ListView.builder(
+// itemBuilder: (context, index) {
+// return Container(
+// color: Colors.redAccent,
+// margin: EdgeInsets.only(bottom: 11),
+// child: Center(child: Text(arrNames[index], style: TextStyle(fontSize: 22))));
+// },
+// itemCount: arrNames.length,
+// itemExtent: 100,
+// ),
+// ),
 
 // List view Seperated and Circular Avator
 //
