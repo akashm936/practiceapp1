@@ -10,6 +10,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var arrColors = ["pink", "blue", "orange", "purple", "yello"];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -25,81 +27,26 @@ class MyApp extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
+          child: ListView.separated(
+            itemBuilder: (context, index) {
+              return Text(
+                arrColors[index],
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
 
-                      Container(
-                        margin: EdgeInsets.only(right: 11,bottom: 11),
-                        width: 200,
-                        height: 200,
-                        color: Colors.deepOrange,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 11,bottom: 11),
-                        width: 200,
-                        height: 200,
-                        color: Colors.amber,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 11,bottom: 11),
-                        width: 200,
-                        height: 200,
-                        color: Colors.pink,
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 11,bottom: 11),
-                        width: 200,
-                        height: 200,
-                        color: Colors.lightBlue,
-                      ),
-                    ],
-                  ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.amber,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.pink,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.lightBlue,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.deepOrange,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.amber,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.pink,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  height: 200,
-                  color: Colors.lightBlue,
-                ),
-              ],
-            ),
+              );
+            },
+            itemCount: arrColors.length,
+            separatorBuilder: (context, index){
+              return Divider(
+                color: Colors.pink,
+                thickness: 1,
+              );
+            },
           ),
         ),
-
       ),
     );
   }
@@ -174,5 +121,83 @@ class MyApp extends StatelessWidget {
 // ),
 // ),
 // ],
+// ),
+// ),
+
+//  Single Child Scroll View
+// Padding(
+// padding: const EdgeInsets.all(8.0),
+// child: SingleChildScrollView(
+// child: Column(
+// children: [
+// SingleChildScrollView(
+// scrollDirection: Axis.horizontal,
+// child: Row(
+// children: [
+//
+// Container(
+// margin: EdgeInsets.only(right: 11,bottom: 11),
+// width: 200,
+// height: 200,
+// color: Colors.deepOrange,
+// ),
+// Container(
+// margin: EdgeInsets.only(right: 11,bottom: 11),
+// width: 200,
+// height: 200,
+// color: Colors.amber,
+// ),
+// Container(
+// margin: EdgeInsets.only(right: 11,bottom: 11),
+// width: 200,
+// height: 200,
+// color: Colors.pink,
+// ),
+// Container(
+// margin: EdgeInsets.only(right: 11,bottom: 11),
+// width: 200,
+// height: 200,
+// color: Colors.lightBlue,
+// ),
+// ],
+// ),
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.amber,
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.pink,
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.lightBlue,
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.deepOrange,
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.amber,
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.pink,
+// ),
+// Container(
+// margin: EdgeInsets.only(bottom: 11),
+// height: 200,
+// color: Colors.lightBlue,
+// ),
+// ],
+// ),
 // ),
 // ),
