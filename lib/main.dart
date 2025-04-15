@@ -25,53 +25,71 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.deepOrangeAccent,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Expanded(
-                flex: 2,
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  color: Colors.redAccent,
-                  height: 100,
-                ),
-              ),
-              Expanded(
-                flex: 4,
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  color: Colors.deepPurple,
-                  height: 100,
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.only(bottom: 11),
-                color: Colors.teal,
-                height: 100,
-              ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  margin: EdgeInsets.only(bottom: 11),
-                  color: Colors.blue,
-                  height: 100,
-                ),
-              )
-            ],
-          ),
-        )
+        body: ListView.separated(
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Text('${index+1}',style: TextStyle(fontSize: 22)),
+              title: Text(arrColors[index], style: TextStyle(fontSize: 22)),
+              subtitle: Text('Number'),
+              trailing: Icon(Icons.add),
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Divider(height: 1, color: Colors.pink, thickness: 1,);
+          },
+          itemCount: arrColors.length,
+        ),
       ),
     );
   }
 }
 
-
-
-
+// Expanded and padding / margin
+// Padding(
+//           padding: const EdgeInsets.all(8.0),
+//           child: Column(
+//             children: [
+//               Expanded(
+//                 flex: 2,
+//                 child: Container(
+//                   width: double.infinity,
+//                   margin: EdgeInsets.only(bottom: 11),
+//                   color: Colors.redAccent,
+//                   height: 100,
+//
+//                   child: Padding(
+//                     padding: const EdgeInsets.all(8.0),
+//                     child: Text("This is Padding Container",style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+//                   ),
+//                 ),
+//               ),
+//               Expanded(
+//                 flex: 4,
+//                 child: Container(
+//                   margin: EdgeInsets.only(bottom: 11),
+//                   color: Colors.deepPurple,
+//                   height: 100,
+//                 ),
+//               ),
+//               Container(
+//                 margin: EdgeInsets.only(bottom: 11),
+//                 color: Colors.teal,
+//                 height: 100,
+//               ),
+//               Expanded(
+//                 flex: 3,
+//                 child: Container(
+//                   margin: EdgeInsets.only(bottom: 11),
+//                   color: Colors.blue,
+//                   height: 100,
+//                 ),
+//               )
+//             ],
+//           ),
+//         )
+//       ),
 
 // ListView , ListView Builder, List View Seperated
-
 
 // adding(
 //           padding: const EdgeInsets.all(8.0),
