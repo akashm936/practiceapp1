@@ -39,9 +39,12 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Text("Sign in",style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+                Container(height: 20,),
                 TextField(
                   controller: emailText,
                   decoration: InputDecoration(
+                    hintText: "Enter Email",
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: BorderSide(
@@ -67,20 +70,22 @@ class _MyAppState extends State<MyApp> {
                         style: BorderStyle.solid
                       )
                     ),
-                    prefixIcon: Icon(Icons.email),prefixIconColor: Colors.pink,
+                    suffixIcon: Icon(Icons.email),prefixIconColor: Colors.pink,
                   ),
                 ),
                 Container(height: 15,),
                 TextField(
                   controller: passText,
+                  obscureText: true,
+                  // obscuringCharacter: '*',
                   decoration: InputDecoration(
+                    hintText: "Enter Password",
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide(
                             color: Colors.pink,
                             width: 3,
                             style: BorderStyle.solid
-
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
@@ -99,12 +104,27 @@ class _MyAppState extends State<MyApp> {
                               style: BorderStyle.solid
                           )
                       ),
-                    suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.remove_red_eye))
+                    suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.remove_red_eye)),
+
                   ),
+
 
                 ),
                 Container(height: 20,),
-                ElevatedButton(onPressed: (){}, child: Text("Login"),)
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    // shape: StadiumBorder(),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    shadowColor: Colors.black,
+                    backgroundColor: Colors.blue,
+                  ),
+                  onPressed: (){
+                  String uEmail = emailText.text.toString();
+                  String uPass = passText.text.toString();
+                  print("Email : $uEmail, Password :  $uPass" );
+                }, child: Text("Login",style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 22),),),
               ],
             ),
           ),
