@@ -36,27 +36,51 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.deepOrangeAccent,
         ),
         body: Center(
-          child: Container(
-              width: 200,
-              height: 200,
-              padding: EdgeInsets.all(11),
-              color: Colors.blue,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text('Today: ${DateFormat('yMMMMEEEEd').format(time)}',style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
-                  // ElevatedButton(onPressed: (){
-                  //   setState(() {
-                  //
-                  //   });
-                  // }, child: Text('Get DateTime'))
-                ],
-              )),
-        ),
+            child: Container(
+              width: 300,
+              height: 300,
+              color: Colors.pink,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Select Date and Time'),
+                    ElevatedButton(onPressed: () async {
+                      DateTime? datePicker = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2020),
+                          lastDate: DateTime(2026));
+                    }, child: Text('Select Date')),
+                    ElevatedButton(onPressed: (){}, child: Text('Select Time'))
+                  ],
+                ))),
       ),
     );
   }
 }
+
+
+// Date Time Formator
+
+//Center(
+//           child: Container(
+//               width: 200,
+//               height: 200,
+//               padding: EdgeInsets.all(11),
+//               color: Colors.blue,
+//               child: Column(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   Text('Today: ${DateFormat('yMMMMEEEEd').format(time)}',style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+//                   // ElevatedButton(onPressed: (){
+//                   //   setState(() {
+//                   //
+//                   //   });
+//                   // }, child: Text('Get DateTime'))
+//                 ],
+//               )),
+//         ),
+
 
 
 
