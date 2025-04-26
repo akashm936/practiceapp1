@@ -20,11 +20,8 @@ class CalculatorAppState extends State<CalculatorApp> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 4,
-                    color: Colors.black
-                  )
-                )
+                  borderSide: BorderSide(width: 4, color: Colors.black),
+                ),
               ),
               keyboardType: TextInputType.number,
               controller: no1Controller,
@@ -36,11 +33,8 @@ class CalculatorAppState extends State<CalculatorApp> {
             child: TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    width: 4,
-                    color: Colors.black
-                  )
-                )
+                  borderSide: BorderSide(width: 4, color: Colors.black),
+                ),
               ),
               keyboardType: TextInputType.number,
               controller: no2Controller,
@@ -57,9 +51,7 @@ class CalculatorAppState extends State<CalculatorApp> {
 
                   var sum = no1 + no2;
                   result = "Addition of $no1 and $no2 is $sum";
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Text("Add"),
               ),
@@ -68,13 +60,10 @@ class CalculatorAppState extends State<CalculatorApp> {
                   var no1 = int.parse(no1Controller.text.toString());
                   var no2 = int.parse(no2Controller.text.toString());
 
-
                   var sub = no1 - no2;
 
                   result = "Subtraction of $no1 and $no2 is $sub";
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Text("Sub"),
               ),
@@ -85,9 +74,7 @@ class CalculatorAppState extends State<CalculatorApp> {
 
                   var div = no1 / no2;
                   result = "Division of $no1 and $no2 is $div";
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Text("Div"),
               ),
@@ -98,9 +85,7 @@ class CalculatorAppState extends State<CalculatorApp> {
 
                   var mul = no1 * no2;
                   result = "Multiplication of $no1 and $no2 is $mul";
-                  setState(() {
-
-                  });
+                  setState(() {});
                 },
                 child: Text("Mul"),
               ),
