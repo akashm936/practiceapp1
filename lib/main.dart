@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceapp1/calculatorapp.dart';
 import 'package:practiceapp1/counterapppage.dart';
 
 void main() {
@@ -46,7 +47,7 @@ class MyHomePage extends StatelessWidget{
           ),
         ],
       ),
-      body: Counterapp(),
+      body: CalculatorApp(),
     );
   }
 
