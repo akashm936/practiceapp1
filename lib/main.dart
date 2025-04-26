@@ -1,64 +1,88 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // var arrNames = ["Ramesh", "Suresh", "ganesh", "Mahesh"];
-    // var emailText = TextEditingController();
-    // var passText = TextEditingController();
-    var time = DateTime.now();
+    return MaterialApp(title: "StateFulWidget", home: MyHomePage());
+  }
+}
 
-    return MaterialApp(
-      theme: ThemeData(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            "Demo app",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          backgroundColor: Colors.deepOrangeAccent,
-        ),
-        body: Center(
-            child: Container(
-              width: 300,
-              height: 300,
-              color: Colors.pink,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Select Date and Time'),
-                    ElevatedButton(onPressed: () async {
-                      DateTime? datePicker = await showDatePicker(
-                          context: context,
-                          initialDate: DateTime.now(),
-                          firstDate: DateTime(2020),
-                          lastDate: DateTime(2026));
-                    }, child: Text('Select Date')),
-                    ElevatedButton(onPressed: (){}, child: Text('Select Time'))
-                  ],
-                ))),
-      ),
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+  @override
+  State<MyHomePage> createState() => MyHomePageState();
+}
+
+class MyHomePageState extends State<MyHomePage> {
+  var counter = 0;
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    void IncreaseCounter(){
+      counter++;
+      print(counter);
+      setState(() {
+
+      });
+    }
+    return Scaffold(
+      appBar: AppBar(title: Text("StatefulWidget")),
+      body: Center(child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Counter : $counter ",style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+          ElevatedButton(
+          onPressed: IncreaseCounter, child: Text("Increase Count",style: TextStyle(color: Colors.orange))),
+        ],
+      )),
     );
   }
 }
 
+// DatePicker
+
+// Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             Center(
+//               child: Container(
+//                 width: 300,
+//                 height: 300,
+//                 color: Colors.blue,
+//                 child: Center(
+//                   child: ElevatedButton(
+//                     onPressed: () async {
+//                       DateTime? datePicked = await showDatePicker(
+//                         context: context,
+//                         initialDate: DateTime.now(), // 👈 required!
+//                         firstDate: DateTime(2020),
+//                         lastDate: DateTime(2025),
+//                       );
+//
+//                       if (datePicked != null) {
+//                         print("Selected Date : ${datePicked.year}");
+//                       }
+//                     },
+//                     child: Text(
+//                       "Select Date",
+//                       style: TextStyle(
+//                         fontSize: 22,
+//                         fontWeight: FontWeight.bold,
+//                       ),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//             ),
+//           ],
+//         ),
 
 // Date Time Formator
 
@@ -80,9 +104,6 @@ class _MyAppState extends State<MyApp> {
 //                 ],
 //               )),
 //         ),
-
-
-
 
 //Login Page Ui
 
@@ -186,10 +207,6 @@ class _MyAppState extends State<MyApp> {
 // ),
 // )
 
-
-
-
-
 // Center(
 // child: Card(
 // elevation: 12,
@@ -203,9 +220,6 @@ class _MyAppState extends State<MyApp> {
 // ),
 // ),
 // ),
-
-
-
 
 //
 //
