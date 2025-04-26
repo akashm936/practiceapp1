@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceapp1/counterapppage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,43 +9,49 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "StateFulWidget", home: MyHomePage());
+    return MaterialApp(
+        title: "StateFulWidget",
+        home: MyHomePage(),
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(
+            backgroundColor: Colors.orange,
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10)
+              )
+            ),),
+          ),
+        );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget{
   const MyHomePage({super.key});
-  @override
-  State<MyHomePage> createState() => MyHomePageState();
-}
-
-class MyHomePageState extends State<MyHomePage> {
-  var counter = 0;
-
 
   @override
   Widget build(BuildContext context) {
-
-    void IncreaseCounter(){
-      counter++;
-      print(counter);
-      setState(() {
-
-      });
-    }
     return Scaffold(
-      appBar: AppBar(title: Text("StatefulWidget")),
-      body: Center(child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text("Counter : $counter ",style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-          ElevatedButton(
-          onPressed: IncreaseCounter, child: Text("Increase Count",style: TextStyle(color: Colors.orange))),
+      appBar: AppBar(
+        title: Text("StatefulWidget", style: TextStyle(fontSize: 22),),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: InkWell(
+                onTap: (){
+                },
+                child: Icon(Icons.refresh,size: 30,),),
+          ),
         ],
-      )),
+      ),
+      body: Counterapp(),
     );
   }
+
 }
+
 
 // DatePicker
 
