@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceapp1/LoginForm.dart';
 import 'package:practiceapp1/SplashScreen.dart';
 import 'package:practiceapp1/calculatorapp.dart';
 import 'package:practiceapp1/counterapppage.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
         title: "StateFulWidget",
-        home: MyHomePage(),
+        home: LoginForm(),
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.orange,
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatelessWidget{
 
-  var hometextfield = TextEditingController();
+  // var hometextfield = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +60,7 @@ class MyHomePage extends StatelessWidget{
               width: 300,
               child: TextField(
 
-                controller: hometextfield,
+                // controller: hometextfield,
                 decoration: InputDecoration(
                   hintText: "Enter Your Name",
                   fillColor: Colors.orangeAccent,
@@ -75,7 +76,7 @@ class MyHomePage extends StatelessWidget{
             ),
             SizedBox(height: 20,),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage(hometextfield.text.toString())));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage()));
             }, child: Text("Click")),
           ],
         ),

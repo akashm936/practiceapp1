@@ -1,10 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practiceapp1/LoginForm.dart';
 import 'package:practiceapp1/main.dart';
 
 class WelcomePage extends StatelessWidget {
-  var username;
-  WelcomePage( this.username);
+  var username1;
+  var userpass1;
+  var userconfpass1;
+  WelcomePage( this.username1, this.userpass1,this.userconfpass1);
 
   @override
   Widget build(BuildContext context) {
@@ -15,18 +18,37 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Welcome $username",
+              "Welcome $username1",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
                 color: Colors.lightBlue,
               ),
             ),
+            SizedBox(height: 20,),
+            Text(
+              "Welcome $userpass1",
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.lightBlue,
+              ),
+            ),
+            SizedBox(height: 20,),
+            Text(
+              "Welcome $userconfpass1",
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.lightBlue,
+              ),
+            ),
+            SizedBox(height: 20,),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()),
+                  MaterialPageRoute(builder: (context) => LoginForm()),
                 );
               },
               child: Text("Clicked To Back"),
