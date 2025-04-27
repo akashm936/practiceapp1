@@ -48,7 +48,11 @@ class MyHomePage extends StatelessWidget{
           ),
         ],
       ),
-      body: WelcomePage(),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage()));
+        }, child: Text("Click")),
+      ),
     );
   }
 
