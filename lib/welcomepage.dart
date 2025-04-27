@@ -3,11 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:practiceapp1/LoginForm.dart';
 import 'package:practiceapp1/main.dart';
 
+
 class WelcomePage extends StatelessWidget {
-  var username1;
-  var userpass1;
-  var userconfpass1;
-  WelcomePage( this.username1, this.userpass1,this.userconfpass1);
+
+  var usernamehome = "";
+  var useremail = "";
+  var userphone = "" ;
+
+  WelcomePage(this.usernamehome, this.useremail, this.userphone);
 
   @override
   Widget build(BuildContext context) {
@@ -18,27 +21,27 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Welcome $username1",
+              "User Name $usernamehome",
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.lightBlue,
               ),
             ),
             SizedBox(height: 20,),
             Text(
-              "Welcome $userpass1",
+              "Email : $useremail",
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.lightBlue,
               ),
             ),
             SizedBox(height: 20,),
             Text(
-              "Welcome $userconfpass1",
+              "Phone : $userphone",
               style: TextStyle(
-                fontSize: 32,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.lightBlue,
               ),

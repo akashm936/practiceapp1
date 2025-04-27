@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practiceapp1/LoginForm.dart';
 import 'package:practiceapp1/SplashScreen.dart';
-import 'package:practiceapp1/calculatorapp.dart';
-import 'package:practiceapp1/counterapppage.dart';
-import 'package:practiceapp1/welcomepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
         title: "StateFulWidget",
-        home: LoginForm(),
+        home: SplashScreen(),
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.orange,
@@ -34,7 +31,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget{
-
+MyHomePage({super.key});
   // var hometextfield = TextEditingController();
 
   @override
@@ -76,7 +73,6 @@ class MyHomePage extends StatelessWidget{
             ),
             SizedBox(height: 20,),
             ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage()));
             }, child: Text("Click")),
           ],
         ),

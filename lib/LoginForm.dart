@@ -5,8 +5,9 @@ import 'package:practiceapp1/welcomepage.dart';
 class LoginForm extends StatelessWidget{
 
   var username = TextEditingController();
-  var userpass = TextEditingController();
-  var userconfpass = TextEditingController();
+  var useremail = TextEditingController();
+  var userphoneno = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,9 +40,9 @@ class LoginForm extends StatelessWidget{
                   ),
                   SizedBox(height: 10,),
                   TextField(
-                    controller: userpass,
+                    controller: useremail,
                     decoration: InputDecoration(
-                      hintText: "Enter Password",
+                      hintText: "Enter Email",
                         border: OutlineInputBorder(
                             borderSide: BorderSide(
                               width: 3,
@@ -52,9 +53,9 @@ class LoginForm extends StatelessWidget{
                   ),
                   SizedBox(height: 10,),
                   TextField(
-                    controller: userconfpass,
+                    controller: userphoneno,
                     decoration: InputDecoration(
-                      hintText: "Enter Confirm Password",
+                      hintText: "Enter phone number",
                         border: OutlineInputBorder(
                             borderSide: BorderSide(
                               width: 3,
@@ -65,8 +66,8 @@ class LoginForm extends StatelessWidget{
                   ),
                   SizedBox(height: 10,),
                   ElevatedButton(onPressed: (){
-                    print("${username.text.toString()}, ${userpass.text.toString()}, ${userconfpass.text.toString()}");
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage(username.text.toString(),userpass.text.toString(),userconfpass.text.toString())));
+                    print("${username.text.toString()}, ${useremail.text.toString()}, ${userphoneno.text.toString()}");
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomePage(username.text.toString(),useremail.text.toString(),userphoneno.text.toString())));
                   }, child: Text("Submit"))
                 ],
               ),
