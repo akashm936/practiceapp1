@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practiceapp1/SplashScreen.dart';
 import 'package:practiceapp1/calculatorapp.dart';
 import 'package:practiceapp1/counterapppage.dart';
 import 'package:practiceapp1/welcomepage.dart';
@@ -12,8 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         title: "StateFulWidget",
-        home: MyHomePage(),
+        home: SplashScreen(),
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.orange,
@@ -57,6 +59,29 @@ class MyHomePage extends StatelessWidget{
   }
 
 }
+
+
+// Simple Appbar and Widget
+
+// Scaffold(
+//       appBar: AppBar(
+//         title: Text("StatefulWidget", style: TextStyle(fontSize: 22),),
+//         actions: [
+//           Padding(
+//             padding: const EdgeInsets.all(8.0),
+//             child: InkWell(
+//                 onTap: (){
+//                 },
+//                 child: Icon(Icons.refresh,size: 30,),),
+//           ),
+//         ],
+//       ),
+//       body: Center(
+//         child: ElevatedButton(onPressed: (){
+//           Navigator.push(context, MaterialPageRoute(builder: (context)=> SplashScreen()));
+//         }, child: Text("Click")),
+//       ),
+//     );
 
 
 // DatePicker
