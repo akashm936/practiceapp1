@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practiceapp1/calculatorapp.dart';
 import 'package:practiceapp1/counterapppage.dart';
+import 'package:practiceapp1/welcomepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,7 +48,7 @@ class MyHomePage extends StatelessWidget{
           ),
         ],
       ),
-      body: CalculatorApp(),
+      body: WelcomePage(),
     );
   }
 

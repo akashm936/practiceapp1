@@ -1,9 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-
 class Counterapp extends StatefulWidget {
-
   @override
   State<Counterapp> createState() => _CounterappState();
 }
@@ -13,22 +10,29 @@ class _CounterappState extends State<Counterapp> {
 
   @override
   Widget build(BuildContext context) {
-
-    void IncreaseCounter(){
+    void IncreaseCounter() {
       counter++;
       print(counter);
-      setState(() {
-
-      });
+      setState(() {});
     }
 
-    return Center(child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text("Counter : $counter ",style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-        ElevatedButton(
-            onPressed: IncreaseCounter, child: Text("Increase Count",style: TextStyle(color: Colors.black, fontSize: 22))),
-      ],
-    ));
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Counter : $counter ",
+            style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+          ),
+          ElevatedButton(
+            onPressed: IncreaseCounter,
+            child: Text(
+              "Increase Count",
+              style: TextStyle(color: Colors.black, fontSize: 22),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
