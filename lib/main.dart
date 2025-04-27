@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
         title: "StateFulWidget",
-        home: SplashScreen(),
+        home: MyHomePage(),
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.orange,
@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget{
-  const MyHomePage({super.key});
+
+  var hometextfield = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +52,33 @@ class MyHomePage extends StatelessWidget{
         ],
       ),
       body: Center(
-        child: ElevatedButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage()));
-        }, child: Text("Click")),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 300,
+              child: TextField(
+
+                controller: hometextfield,
+                decoration: InputDecoration(
+                  hintText: "Enter Your Name",
+                  fillColor: Colors.orangeAccent,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      width: 5,
+                      color: Colors.black,
+                      style: BorderStyle.solid
+                    )
+                  )
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+            ElevatedButton(onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> WelcomePage(hometextfield.text.toString())));
+            }, child: Text("Click")),
+          ],
+        ),
       ),
     );
   }
