@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practiceapp1/LoginForm.dart';
 import 'package:practiceapp1/SplashScreen.dart';
+import 'package:practiceapp1/listwheelWidget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
         title: "StateFulWidget",
-        home: SplashScreen(),
+        home: ListWheelScrollWidget(),
         theme: ThemeData(
           appBarTheme: AppBarTheme(
             backgroundColor: Colors.orange,
